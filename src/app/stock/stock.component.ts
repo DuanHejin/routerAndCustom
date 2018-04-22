@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
+import {Editor} from 'primeng/editor';
 
 @Component({
   selector: 'app-stock',
@@ -29,8 +30,14 @@ export class StockComponent implements OnInit {
   }
 
 
-  public onTextChange(event: any) {
-    event.htmlValue = event.textValue;
+  public onTextChange(event: any, editor: Editor) {
+    // event.htmlValue = event.textValue;
+    // let reg = new RegExp(/<[^>]*>/g);
+    let reg = new RegExp(/<(?!a|p|^a|^p).*?>/g);
+    let newValue = String(event.htmlValue).replace(reg, "");
     console.log(event);
+    console.log(newValue);
+    event.htmlValue = newValue;
+    // editor.writeValue(event.textValue + "aa");
   }
 }

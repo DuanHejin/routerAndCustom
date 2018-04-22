@@ -1,0 +1,79 @@
+<p>
+  以下テーブルエリア
+</p>
+
+
+<div class="wf-area">
+
+  <table class="table table-bordered table-with-rowspan">
+    <thead>
+      <tr>
+        <th>削除</th>
+        <th>ロール名</th>
+        <th>ユーザ名</th>
+        <th>ステータス</th>
+        <th>日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows;">
+        <td class="text-center" [ngClass]="{'border-bottom-none': row.needChkRenderer && row.isFirst, 'border-top-none': row.needChkRenderer && !row.isFirst }">
+          <ng-container *ngIf="!row.needChkRenderer || row.isFirst">
+            <input type="checkbox">
+          </ng-container>
+        </td>
+        <td [ngClass]="{'border-bottom-none': row.needRenderer && row.isFirst, 'border-top-none': row.needRenderer && !row.isFirst }">
+          <ng-container *ngIf="!row.needRenderer || row.isFirst">
+              {{row.roleName}}
+          </ng-container>
+        </td>
+        <td>{{row.userName}}</td>
+        <td>{{row.status}}</td>
+        <td>{{row.date | date:"yyyy/MM/dd" }}</td>
+      </tr>
+    </tbody>
+    <!-- <tbody>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td rowspan="2">2</td>
+        <td rowspan="2">2</td>
+        <td>2-1</td>
+        <td>2-1</td>
+        <td>2-1</td>
+      </tr>
+      <tr>
+        <td>2-2</td>
+        <td>2-2</td>
+        <td>2-2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td rowspan="2">3</td>
+        <td>3-1</td>
+        <td>3-1</td>
+        <td>3-1</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3-2</td>
+        <td>3-2</td>
+        <td>3-2</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+      </tr>
+
+    </tbody> -->
+
+  </table>
+</div>

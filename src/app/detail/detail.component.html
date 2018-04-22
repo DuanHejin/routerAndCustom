@@ -1,0 +1,41 @@
+<p>
+  以下テーブルエリア
+</p>
+<div class="pre-scrollable custom-scroll-max-height">
+  aaaaaa<br>
+  ea<br>
+  v<br>
+  d<br>
+  av<br>
+  fd<br>asf
+  df<br>adfsa
+  df<br>adfasfa
+  fd<br>asfasf
+<br>
+  s<br>
+</div>
+
+<div class="wf-area">
+
+  <table class="table table-bordered table-with-no-colspan">
+    <thead>
+      <tr>
+        <th>列id</th>
+        <th>列label</th>
+        <th>列name</th>
+        <th>列date</th>
+        <th>列value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows;">
+        <td>{{row.id}}</td>
+        <td>{{row.label}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.date | date:"yyyy/MM/dd" }}</td>
+        <td>{{row.value}}</td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>

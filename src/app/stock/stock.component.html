@@ -8,5 +8,5 @@
   testValue是{{testValue}}
 </p>
 
-<p-editor [(ngModel)]="commentText" [style]="{'height':'320px'}"
-(onTextChange)="onTextChange($event)"></p-editor>
+<p-editor #editor [(ngModel)]="commentText" [style]="{'height':'320px'}"
+(onTextChange)="onTextChange($event, editor)"></p-editor>

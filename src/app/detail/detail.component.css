@@ -1,0 +1,20 @@
+.wf-area {
+    padding: 0 16px;
+}
+.custom-scroll-max-height {
+    max-height: 34px;
+}
+
+/* 結合セールなしTable*/
+table tbody {
+    display: block;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+table thead,
+table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}

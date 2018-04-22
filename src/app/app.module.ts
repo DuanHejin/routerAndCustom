@@ -11,6 +11,9 @@ import { Code404Component } from './code404/code404.component';
 import { OnlyNumberDirective } from './only-number.directive';
 
 import {EditorModule} from 'primeng/editor';
+import { DetailComponent } from './detail/detail.component';
+import {DatePipe} from '@angular/common';
+import { DetailWithCollspanTableComponent } from './detail-with-collspan-table/detail-with-collspan-table.component';
 
 
 @NgModule({
@@ -19,15 +22,18 @@ import {EditorModule} from 'primeng/editor';
     HomeComponent,
     StockComponent,
     Code404Component,
-    OnlyNumberDirective
+    OnlyNumberDirective,
+    DetailComponent,
+    DetailWithCollspanTableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     EditorModule,
+
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
